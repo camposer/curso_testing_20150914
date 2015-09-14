@@ -19,8 +19,6 @@
 	- Pruebas unitarias
 		- https://en.wikipedia.org/wiki/XUnit
 		- http://junit.org
-	- Pruebas de integración
-		- 
 	- TDD
 		- https://en.wikipedia.org/wiki/Test-driven_development
 	- Mocks
@@ -41,10 +39,15 @@
 			- http://g00glen00b.be/spring-boot-selenium
 		- Stress
 			- http://jmeter.apache.org/
+	- Integración continua
+		- http://www.martinfowler.com/articles/continuousIntegration.html
 
 - Herramientas
-	- http://www.sonarqube.org
-	- https://jenkins-ci.org		
+	- Métricas
+		- http://www.sonarqube.org
+		- http://www.eclemma.org
+	- Integración continua
+		- https://jenkins-ci.org		
 
 - Métodos ágiles de desarrollo
 	- http://www.extremeprogramming.org

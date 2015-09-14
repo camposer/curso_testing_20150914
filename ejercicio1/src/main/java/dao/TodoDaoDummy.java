@@ -3,6 +3,8 @@ package dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+
 import model.Todo;
 
 public class TodoDaoDummy implements TodoDao {
@@ -45,6 +47,11 @@ public class TodoDaoDummy implements TodoDao {
 
 	public List<Todo> obtenerTodos() {
 		return todos;
+	}
+
+	@Override
+	public void setEntityManager(EntityManager entityManager) {
+
 	}
 
 }

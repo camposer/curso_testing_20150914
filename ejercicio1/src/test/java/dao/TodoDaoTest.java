@@ -1,5 +1,9 @@
 package dao;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -11,15 +15,30 @@ import model.Todo;
 
 public class TodoDaoTest {
 	private TodoDao todoDao;
+	private static EntityManager entityManager;
+	private EntityTransaction tx;
 	
 	@BeforeClass
 	public static void beforeClass() {
 		Entorno.setTipoActivo(Entorno.Tipo.TEST);
+		EntityManagerFactory entityManagerFactory = 
+				dao.EntityManagerFactory.createEntityManagerFactory();
+		entityManager = entityManagerFactory.createEntityManager();
+		
 	}
 	
 	@Before
 	public void before() {
-		this.todoDao = TodoDaoFactory.createTodoDao();
+		todoDao = TodoDaoFactory.createTodoDao();
+		todoDao.setEntityManager(entityManager);
+
+		tx = entityManager.getTransaction();
+		tx.begin();
+	}
+	
+	@After
+	public void after() {
+		tx.rollback();
 	}
 	
 	@Test

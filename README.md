@@ -39,6 +39,11 @@
 			- http://g00glen00b.be/spring-boot-selenium
 		- Stress
 			- http://jmeter.apache.org/
+			- http://www.soapui.org/
+	- Pruebas de Aceptación
+		- http://www.fitnesse.org/
+		- http://concordion.org/
+
 	- Integración continua
 		- http://www.martinfowler.com/articles/continuousIntegration.html
 

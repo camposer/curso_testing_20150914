@@ -1,19 +1,24 @@
 package dao;
 
+import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
 import env.Entorno;
 
 public abstract class EntityManagerFactory {
-	public static javax.persistence.EntityManagerFactory 
-			createEntityManagerFactory() {
-		
+	private static javax.persistence.EntityManagerFactory entityManagerFactory;
+	
+	static {
 		if (Entorno.getTipoActivo().equals(Entorno.Tipo.TEST)) {
-			return Persistence
+			entityManagerFactory = Persistence
 					.createEntityManagerFactory("ejercicio1-test");
 		} else {
-			return Persistence
+			entityManagerFactory = Persistence
 					.createEntityManagerFactory("ejercicio1");
 		}
+	}
+	
+	public static EntityManager createEntityManager() {
+		return entityManagerFactory.createEntityManager();
 	}
 }

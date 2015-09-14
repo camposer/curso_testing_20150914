@@ -1,7 +1,6 @@
 package dao;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 
 import org.junit.After;
@@ -21,9 +20,7 @@ public class TodoDaoTest {
 	@BeforeClass
 	public static void beforeClass() {
 		Entorno.setTipoActivo(Entorno.Tipo.TEST);
-		EntityManagerFactory entityManagerFactory = 
-				dao.EntityManagerFactory.createEntityManagerFactory();
-		entityManager = entityManagerFactory.createEntityManager();
+		entityManager = EntityManagerFactory.createEntityManager();
 		
 	}
 	
